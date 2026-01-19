@@ -251,23 +251,30 @@ box-shadow: 0 15px 40px rgba(52, 152, 219, 0.6);
 /* ===== ТИМ СЕКЦИЯ ===== */
 .team-section {
 padding: 100px 0;
-background: white;
+background: 
+linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9)),
+url('images/team-bg.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 }
 
 .section-title {
 text-align: center;
 font-size: 2.8rem;
 margin-bottom: 1rem;
-background: linear-gradient(45deg, var(--primary), var(--accent));
+background: linear-gradient(45deg, #1a365d, #2563eb);
 -webkit-background-clip: text;
 background-clip: text;
 color: transparent;
+text-shadow: 0 2px 4px rgba(255,255,255,0.3);
 }
 
 .section-subtitle {
 text-align: center;
-color: #666;
+color: #1e3a5f;
 font-size: 1.2rem;
+font-weight: 500;
 margin-bottom: 1.5rem;
 max-width: 700px;
 margin-left: auto;
@@ -276,15 +283,16 @@ margin-right: auto;
 
 .section-description {
 text-align: center;
-color: #555;
+color: #1e3a5f;
 font-size: 1.05rem;
 line-height: 1.8;
 max-width: 800px;
 margin: 0 auto 3rem auto;
 padding: 25px;
-background: rgba(52, 152, 219, 0.05);
+background: rgba(255, 255, 255, 0.8);
 border-radius: 15px;
-border-left: 4px solid var(--accent);
+border-left: 4px solid #2563eb;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .team-grid {
@@ -729,15 +737,16 @@ to { opacity: 1; }
 
 .modal-content {
 background: white;
-margin: 5% auto;
+margin: 20px auto;
 padding: 0;
 border-radius: 25px;
 max-width: 600px;
 width: 90%;
+max-height: calc(100vh - 40px);
+overflow-y: auto;
 position: relative;
 animation: slideIn 0.4s ease;
 box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-overflow: hidden;
 }
 
 @keyframes slideIn {
@@ -764,7 +773,9 @@ margin-bottom: 10px;
 }
 
 .modal-body {
-padding: 40px;
+padding: 30px;
+max-height: calc(100vh - 200px);
+overflow-y: auto;
 }
 
 .modal-close {
