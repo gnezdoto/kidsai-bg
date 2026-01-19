@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакт | KidsAI.bg - Екип Гнездото</title>
+    <meta name="description" content="Свържете се с Екип Гнездото. Имате въпроси за AI и деца? Пишете ни!">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidsai.bg/contact.html">
+    <meta property="og:title" content="Контакт | KidsAI.bg - Екип Гнездото">
+    <meta property="og:description" content="Свържете се с Екип Гнездото. Имате въпроси за AI и деца? Пишете ни!">
+    <meta property="og:image" content="https://www.kidsai.bg/images/hero-bg.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    
+    <!-- Шрифтове и иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Основни стилове -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .contact-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            width: 40px;
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+        
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-radius: 20px;
+        }
+        
+        .form-success i {
+            font-size: 4rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        .form-success h3 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Хедър -->
+<header class="main-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            Kids<span>AI</span>.bg
+        </a>
+        
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Начало</a></li>
+                <li><a href="index.html#about"><i class="fas fa-users"></i> За Нас</a></li>
+                <li><a href="index.html#zones"><i class="fas fa-traffic-light"></i> Тризоните</a></li>
+                <li><a href="index.html#game"><i class="fas fa-gamepad"></i> Игра</a></li>
+                <li><a href="articles.html"><i class="fas fa-newspaper"></i> Статии</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> Ресурси</a></li>
+                <li><a href="ai-lab.html"><i class="fas fa-flask"></i> AI Лаборатория</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Контакт</a></li>
+            </ul>
+        </nav>
+        
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <h1><i class="fas fa-envelope"></i> Свържете се с нас</h1>
+        <p>Имате въпроси? Ще се радваме да чуем от вас!</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        
+        <div class="contact-grid">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3><i class="fas fa-info-circle"></i> Информация за контакт</h3>
+                <p>
+                    Екип "Гнездото" е винаги на разположение да отговори на вашите въпроси 
+                    относно AI и детското развитие. Пишете ни и ще ви отговорим възможно най-скоро!
+                </p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <strong>Уебсайт</strong><br>
+                        <a href="https://www.kidsai.bg">www.kidsai.bg</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Време за отговор</strong><br>
+                        <span>Обикновено до 48 часа</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(52, 152, 219, 0.1); border-radius: 15px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> Съвет</h4>
+                    <p style="font-size: 0.9rem; color: #666; margin: 0;">
+                        За по-бърз отговор, моля опишете подробно вашия въпрос или предложение във формата.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div>
+                <!-- 
+                    ╔══════════════════════════════════════════════════════════════╗
+                    ║  ИНСТРУКЦИИ ЗА НАСТРОЙКА НА ФОРМАТА:                          ║
+                    ║  1. Създайте безплатен акаунт в formspree.io                  ║
+                    ║  2. Създайте нова форма и копирайте endpoint URL              ║
+                    ║  3. Заменете action="https://formspree.io/f/YOUR_FORM_ID"    ║
+                    ║     с вашия реален Formspree endpoint                        ║
+                    ║  ИЛИ                                                          ║
+                    ║  Използвайте друг form backend като Netlify Forms             ║
+                    ╚══════════════════════════════════════════════════════════════╝
+                -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Вашето име *</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email адрес *</label>
+                        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Тема</label>
+                        <select id="subject" name="subject">
+                            <option value="Общ въпрос">Общ въпрос</option>
+                            <option value="Предложение за статия">Предложение за статия</option>
+                            <option value="Идея за експеримент">Идея за AI експеримент</option>
+                            <option value="Въпрос за играта">Въпрос за играта</option>
+                            <option value="Технически проблем">Технически проблем</option>
+                            <option value="Сътрудничество">Предложение за сътрудничество</option>
+                            <option value="Друго">Друго</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Вашето съобщение *</label>
+                        <textarea id="message" name="message" required placeholder="Напишете вашето съобщение тук..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Изпрати съобщение
+                    </button>
+                </form>
+                
+                <!-- Success Message (показва се след изпращане) -->
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Благодарим ви!</h3>
+                    <p>Вашето съобщение беше изпратено успешно. Ще ви отговорим възможно най-скоро!</p>
+                    <a href="index.html" class="cta-button" style="opacity: 1; animation: none; margin-top: 20px;">
+                        <i class="fas fa-home"></i> Към началната страница
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+<!-- Футър -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-map-marker-alt"></i> KidsAI.bg</h4>
+                <p>Образователна платформа за AI грамотност при деца</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4><i class="fas fa-link"></i> Бързи линкове</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Начало</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> За Нас</a></li>
+                    <li><a href="index.html#zones"><i class="fas fa-chevron-right"></i> Тризоните</a></li>
+                    <li><a href="index.html#game"><i class="fas fa-chevron-right"></i> Игра</a></li>
+                    <li><a href="articles.html"><i class="fas fa-chevron-right"></i> Статии</a></li>
+                    <li><a href="resources.html"><i class="fas fa-chevron-right"></i> Ресурси</a></li>
+                    <li><a href="ai-lab.html"><i class="fas fa-chevron-right"></i> AI Лаборатория</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4><i class="fas fa-shield-alt"></i> Нашата Мисия</h4>
+                <p>Да създадем сигурна и информативна среда, която помага на родителите да навигират в дигиталния свят заедно със своите деца.</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 KidsAI.bg | Екип "Гнездото". Всички права запазени.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                <i class="fas fa-heart" style="color: #f72585;"></i> Създадено с любов и грижа за бъдещето
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="navigation.js"></script>
+<script>
+    // Показване на success съобщение след изпращане (ако използвате Formspree)
+    // Formspree автоматично пренасочва, но можете да добавите custom handling
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    
+    // Ако URL съдържа ?success, покажи success съобщението
+    if (window.location.search.includes('success')) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+    }
+</script>
+</body>
+</html>
