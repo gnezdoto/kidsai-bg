@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[ЗАГЛАВИЕ НА СТАТИЯТА] - KidsAI.bg</title>
+<meta name="description" content="[КРАТКО ОПИСАНИЕ НА СТАТИЯТА]">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--primary: #2c3e50;
+--accent: #3498db;
+--light-accent: #5dade2;
+--dark: #212529;
+--background-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+background: var(--background-gradient);
+color: var(--dark);
+line-height: 1.8;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: 700;
+background: linear-gradient(45deg, var(--primary), var(--accent));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo i {
+font-size: 2.2rem;
+color: var(--primary);
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+list-style: none;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--dark);
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+padding: 8px 16px;
+border-radius: 25px;
+transition: all 0.3s ease;
+white-space: nowrap;
+}
+
+.nav-links a:hover {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+transform: translateY(-2px);
+}
+
+.nav-links a.active {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+}
+
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+padding: 5px;
+background: none;
+border: none;
+}
+
+.hamburger span {
+width: 28px;
+height: 3px;
+background: var(--primary);
+margin: 4px 0;
+transition: 0.3s;
+border-radius: 3px;
+}
+
+/* Article */
+.article-hero {
+padding: 150px 0 80px;
+text-align: center;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+}
+
+.article-category {
+display: inline-block;
+background: rgba(255, 255, 255, 0.2);
+padding: 8px 20px;
+border-radius: 20px;
+font-size: 0.9rem;
+margin-bottom: 20px;
+}
+
+.article-hero h1 {
+font-size: 3rem;
+margin-bottom: 1.5rem;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.article-meta {
+font-size: 1rem;
+opacity: 0.9;
+}
+
+.article-meta i {
+margin: 0 5px;
+}
+
+.article-content {
+max-width: 800px;
+margin: 0 auto;
+padding: 80px 20px;
+background: white;
+}
+
+.article-content h2 {
+color: var(--primary);
+font-size: 2rem;
+margin: 3rem 0 1.5rem 0;
+}
+
+.article-content h3 {
+color: var(--primary);
+font-size: 1.5rem;
+margin: 2rem 0 1rem 0;
+}
+
+.article-content p {
+margin-bottom: 1.5rem;
+font-size: 1.1rem;
+line-height: 1.9;
+color: #333;
+}
+
+.article-content ul,
+.article-content ol {
+margin: 1.5rem 0;
+padding-left: 2rem;
+}
+
+.article-content li {
+margin-bottom: 1rem;
+font-size: 1.05rem;
+}
+
+.article-content blockquote {
+border-left: 5px solid var(--accent);
+background: #f8f9fa;
+padding: 20px 30px;
+margin: 2rem 0;
+font-style: italic;
+color: #555;
+border-radius: 5px;
+}
+
+.article-content img {
+max-width: 100%;
+border-radius: 10px;
+margin: 2rem 0;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.key-takeaway {
+background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+padding: 30px;
+border-radius: 15px;
+border-left: 5px solid #4caf50;
+margin: 3rem 0;
+}
+
+.key-takeaway h3 {
+color: #2e7d32;
+margin-top: 0;
+}
+
+.article-footer {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px 20px;
+background: white;
+border-top: 2px solid #eee;
+}
+
+.author-box {
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 30px;
+background: #f8f9fa;
+border-radius: 15px;
+}
+
+.author-icon {
+font-size: 3rem;
+color: var(--accent);
+}
+
+.author-info h4 {
+color: var(--primary);
+margin-bottom: 5px;
+}
+
+.author-info p {
+color: #666;
+font-size: 0.95rem;
+margin: 0;
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--accent);
+font-weight: 600;
+margin-top: 2rem;
+transition: all 0.3s ease;
+}
+
+.back-link:hover {
+color: var(--primary);
+padding-left: 5px;
+}
+
+/* Footer */
+.main-footer {
+background: linear-gradient(135deg, var(--dark), #343a40);
+color: white;
+padding: 60px 0 30px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-bottom: 40px;
+text-align: left;
+}
+
+.footer-section h4 {
+font-size: 1.4rem;
+margin-bottom: 20px;
+color: var(--accent);
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 10px;
+}
+
+.footer-links a {
+color: #ccc;
+text-decoration: none;
+transition: all 0.3s ease;
+display: inline-block;
+}
+
+.footer-links a:hover {
+color: white;
+padding-left: 5px;
+}
+
+.footer-contact a {
+color: var(--accent);
+text-decoration: none;
+font-weight: 600;
+}
+
+.copyright {
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+color: #aaa;
+font-size: 0.9rem;
+text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+.nav-links {
+position: fixed;
+left: -100%;
+top: 70px;
+flex-direction: column;
+background-color: rgba(255, 255, 255, 0.98);
+width: 100%;
+text-align: center;
+transition: 0.4s;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+padding: 30px 0;
+gap: 0;
+}
+
+.nav-links.active {
+left: 0;
+}
+
+.nav-links li {
+margin: 15px 0;
+}
+
+.hamburger {
+display: flex;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.article-hero h1 {
+font-size: 2.2rem;
+}
+
+.article-content {
+padding: 60px 20px;
+}
+
+.author-box {
+flex-direction: column;
+text-align: center;
+}
+
+.footer-content {
+text-align: center;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="main-header">
+<div class="container header-container">
+<a href="index.html" class="logo">
+Kids<span>AI</span>.bg
+</a>
+
+<nav>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Начало</a></li>
+<li><a href="index.html#about"><i class="fas fa-users"></i> За Нас</a></li>
+<li><a href="index.html#zones"><i class="fas fa-traffic-light"></i> Тризоните</a></li>
+<li><a href="index.html#game"><i class="fas fa-gamepad"></i> Игра</a></li>
+<li><a href="articles.html" class="active"><i class="fas fa-newspaper"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-book"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-flask"></i> AI Лаборатория</a></li>
+<li><a href="index.html#contact"><i class="fas fa-envelope"></i> Контакт</a></li>
+</ul>
+</nav>
+
+<button class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+
+<!-- Article Hero -->
+<section class="article-hero">
+<div class="container">
+<div class="article-category">
+<i class="fas fa-tag"></i> [КАТЕГОРИЯ - напр. AI и Развитие]
+</div>
+<h1>[ЗАГЛАВИЕ НА СТАТИЯТА]</h1>
+<div class="article-meta">
+<i class="fas fa-user"></i> Екип Гнездото
+<i class="fas fa-calendar"></i> [ДАТА - напр. 15 Януари 2025]
+<i class="fas fa-clock"></i> [ВРЕМЕ ЗА ЧЕТЕНЕ - напр. 8 мин]
+</div>
+</div>
+</section>
+
+<!-- Article Content -->
+<article class="article-content">
+<!-- 
+ИНСТРУКЦИИ ЗА ИЗПОЛЗВАНЕ НА ТОЗИ ШАБЛОН:
+
+1. Копирай този файл и го преименувай (напр. article-ai-homework.html)
+2. Промени заглавието в <title> и <h1>
+3. Промени meta description
+4. Добави категория и дата
+5. Напиши съдържанието тук:
+-->
+
+<p>
+[ВЪВЕДЕНИЕ - 1-2 параграфа, които обясняват защо темата е важна и какво ще научи читателят]
+</p>
+
+<h2>[ПОДЗАГЛАВИЕ 1]</h2>
+<p>
+[Съдържание на първата секция...]
+</p>
+
+<h3>[Под-подзаглавие ако трябва]</h3>
+<p>
+[Още съдържание...]
+</p>
+
+<ul>
+<li>[Точка 1 от списък]</li>
+<li>[Точка 2 от списък]</li>
+<li>[Точка 3 от списък]</li>
+</ul>
+
+<h2>[ПОДЗАГЛАВИЕ 2]</h2>
+<p>
+[Съдържание на втората секция...]
+</p>
+
+<blockquote>
+"[ЦИТАТ ИЛИ ВАЖНА МИСЪЛ]"
+</blockquote>
+
+<h2>[ПОДЗАГЛАВИЕ 3]</h2>
+<p>
+[Съдържание на третата секция...]
+</p>
+
+<div class="key-takeaway">
+<h3>🎯 Ключови изводи:</h3>
+<ul>
+<li>[Ключова точка 1]</li>
+<li>[Ключова точка 2]</li>
+<li>[Ключова точка 3]</li>
+</ul>
+</div>
+
+<h2>Заключение</h2>
+<p>
+[ЗАКЛЮЧЕНИЕ - обобщение и call to action]
+</p>
+
+</article>
+
+<!-- Article Footer -->
+<div class="article-footer">
+<div class="author-box">
+<div class="author-icon">
+<i class="fas fa-users-cog"></i>
+</div>
+<div class="author-info">
+<h4>Екип "Гнездото"</h4>
+<p>Психолози и арттерапевти, обединени от мисията да направят AI безопасен за децата</p>
+</div>
+</div>
+
+<a href="articles.html" class="back-link">
+<i class="fas fa-arrow-left"></i> Обратно към статиите
+</a>
+</div>
+
+<!-- Footer -->
+<footer class="main-footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4><i class="fas fa-map-marker-alt"></i> KidsAI.bg</h4>
+<p>Образователна платформа за AI грамотност при деца</p>
+<div class="footer-contact">
+<p><i class="fas fa-envelope"></i> <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a></p>
+</div>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-link"></i> Бързи линкове</h4>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Начало</a></li>
+<li><a href="index.html#about"><i class="fas fa-chevron-right"></i> За Нас</a></li>
+<li><a href="index.html#zones"><i class="fas fa-chevron-right"></i> Тризоните</a></li>
+<li><a href="index.html#game"><i class="fas fa-chevron-right"></i> Игра</a></li>
+<li><a href="articles.html"><i class="fas fa-chevron-right"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-chevron-right"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-chevron-right"></i> AI Лаборатория</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-shield-alt"></i> Нашата Мисия</h4>
+<p>Да създадим сигурна и информативна среда, която помага на родителите да навигират в дигиталния свят заедно със своите деца.</p>
+</div>
+</div>
+
+<div class="copyright">
+<p>&copy; 2024 KidsAI.bg | Екип "Гнездото". Всички права запазени.</p>
+<p style="margin-top: 10px; font-size: 0.8rem;">
+<i class="fas fa-heart" style="color: #f72585;"></i> Създадено с любов и грижа за бъдещето
+</p>
+</div>
+</div>
+</footer>
+
+<script src="navigation.js"></script>
+</body>
+</html>

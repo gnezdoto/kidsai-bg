@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KidsAI.bg - Екип Гнездото | Тризоните на AI</title>
+<meta name="description" content="Практическо ръководство за родители в ерата на изкуствения интелект. Научете за Тризоните на AI, игри и ресурси за здравословно дигитално детство.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.kidsai.bg/">
+<meta property="og:title" content="KidsAI.bg - Екип Гнездото | Тризоните на AI">
+<meta property="og:description" content="Открийте формулата за дигитално родителство от Екип Гнездото. Научете децата си да използват AI умно и безопасно.">
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Шрифтове и иконки -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== ОСНОВНИ СТИЛОВЕ ===== */
+:root {
+--primary: #2c3e50;
+--secondary: #34495e;
+--accent: #3498db;
+--light-accent: #5dade2;
+--green-zone: #2ecc71;
+--yellow-zone: #f1c40f;
+--red-zone: #e74c3c;
+--light: #f8f9fa;
+--dark: #212529;
+--background-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+background: var(--background-gradient);
+color: var(--dark);
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* ===== ХЕДЪР ===== */
+.main-header {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+from { transform: translateY(-100%); }
+to { transform: translateY(0); }
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: 700;
+background: linear-gradient(45deg, var(--primary), var(--accent));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo i {
+font-size: 2.2rem;
+color: var(--primary);
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+list-style: none;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--dark);
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+padding: 8px 16px;
+border-radius: 25px;
+transition: all 0.3s ease;
+position: relative;
+white-space: nowrap;
+}
+
+.nav-links a:hover {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.nav-links a.active {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+padding: 5px;
+background: none;
+border: none;
+}
+
+.hamburger span {
+width: 28px;
+height: 3px;
+background: var(--primary);
+margin: 4px 0;
+transition: 0.3s;
+border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* ===== HERO СЕКЦИЯ ===== */
+.hero {
+padding: 180px 0 100px;
+text-align: center;
+background: 
+linear-gradient(rgba(102, 126, 234, 0.85), rgba(118, 75, 162, 0.85)),
+url('images/hero-bg.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+color: white;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Z"/></svg>');
+background-size: cover;
+}
+
+.hero-content {
+max-width: 800px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+
+.hero h1 {
+font-size: 3.5rem;
+margin-bottom: 1.5rem;
+animation: fadeInUp 1s ease;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+font-size: 1.3rem;
+margin-bottom: 2.5rem;
+opacity: 0.9;
+animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.cta-button {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: linear-gradient(45deg, var(--accent), var(--light-accent));
+color: white;
+padding: 18px 40px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 700;
+font-size: 1.1rem;
+transition: all 0.3s ease;
+animation: fadeInUp 1s ease 0.4s forwards;
+opacity: 0;
+border: none;
+cursor: pointer;
+box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+}
+
+.cta-button:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 40px rgba(52, 152, 219, 0.6);
+}
+
+/* ===== ТИМ СЕКЦИЯ ===== */
+.team-section {
+padding: 100px 0;
+background: white;
+}
+
+.section-title {
+text-align: center;
+font-size: 2.8rem;
+margin-bottom: 1rem;
+background: linear-gradient(45deg, var(--primary), var(--accent));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+
+.section-subtitle {
+text-align: center;
+color: #666;
+font-size: 1.2rem;
+margin-bottom: 1.5rem;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.section-description {
+text-align: center;
+color: #555;
+font-size: 1.05rem;
+line-height: 1.8;
+max-width: 800px;
+margin: 0 auto 3rem auto;
+padding: 25px;
+background: rgba(52, 152, 219, 0.05);
+border-radius: 15px;
+border-left: 4px solid var(--accent);
+}
+
+.team-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 40px;
+margin-top: 50px;
+}
+
+.team-card {
+background: white;
+border-radius: 20px;
+padding: 40px 30px;
+text-align: center;
+transition: all 0.4s ease;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+border: 2px solid transparent;
+}
+
+.team-card:hover {
+border-color: var(--primary);
+transform: translateY(-10px);
+}
+
+.team-icon {
+font-size: 3.5rem;
+color: var(--primary);
+margin-bottom: 20px;
+}
+
+.team-card h3 {
+font-size: 1.6rem;
+margin-bottom: 15px;
+color: var(--dark);
+}
+
+/* ===== ТРИЗОНИТЕ ===== */
+.zones-section {
+padding: 100px 0;
+background: white;
+}
+
+.zones-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 30px;
+margin-top: 50px;
+}
+
+.zone-card {
+background: white;
+border-radius: 20px;
+padding: 40px 30px;
+text-align: center;
+transition: all 0.4s ease;
+position: relative;
+overflow: hidden;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+border: 2px solid transparent;
+}
+
+.zone-card:hover {
+transform: translateY(-15px);
+box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.zone-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 8px;
+}
+
+.zone-card.green::before { background: var(--green-zone); }
+.zone-card.yellow::before { background: var(--yellow-zone); }
+.zone-card.red::before { background: var(--red-zone); }
+
+.zone-icon {
+font-size: 4rem;
+margin-bottom: 25px;
+display: inline-block;
+}
+
+.zone-card.green .zone-icon { color: var(--green-zone); }
+.zone-card.yellow .zone-icon { color: var(--yellow-zone); }
+.zone-card.red .zone-icon { color: var(--red-zone); }
+
+.zone-card h3 {
+font-size: 1.8rem;
+margin-bottom: 20px;
+color: var(--dark);
+}
+
+.zone-features {
+list-style: none;
+text-align: left;
+margin-top: 25px;
+}
+
+.zone-features li {
+padding: 10px 0;
+padding-left: 35px;
+position: relative;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.zone-features li:last-child {
+border-bottom: none;
+}
+
+.zone-features li::before {
+content: '✓';
+position: absolute;
+left: 0;
+top: 10px;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+}
+
+.zone-card.green .zone-features li::before { background: var(--green-zone); color: white; }
+.zone-card.yellow .zone-features li::before { background: var(--yellow-zone); color: white; }
+.zone-card.red .zone-features li::before { background: var(--red-zone); color: white; }
+
+/* ===== ИГРА ===== */
+.game-section {
+padding: 100px 0;
+background: 
+linear-gradient(rgba(240, 244, 255, 0.95), rgba(230, 240, 255, 0.95)),
+url('images/game-bg.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+.game-container {
+background: white;
+border-radius: 25px;
+padding: 50px;
+box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+margin-top: 40px;
+position: relative;
+}
+
+.game-warning {
+background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+border-left: 5px solid #f1c40f;
+padding: 20px;
+border-radius: 10px;
+margin-bottom: 30px;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.game-warning i {
+font-size: 2rem;
+color: #f39c12;
+flex-shrink: 0;
+}
+
+.game-warning-text {
+flex: 1;
+}
+
+.game-warning-text strong {
+display: block;
+margin-bottom: 5px;
+color: #e67e22;
+}
+
+.game-stats {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+padding: 20px;
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+border-radius: 15px;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.stat-item {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 1.1rem;
+font-weight: 600;
+}
+
+.stat-item i {
+font-size: 1.5rem;
+color: var(--primary);
+}
+
+.game-board {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+margin-bottom: 40px;
+}
+
+.drop-zone {
+background: white;
+border: 3px dashed #e0e0e0;
+border-radius: 20px;
+padding: 25px;
+text-align: center;
+transition: all 0.3s ease;
+min-height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+position: relative;
+}
+
+.drop-zone.drag-over {
+border-color: var(--primary);
+background: rgba(52, 152, 219, 0.05);
+transform: scale(1.02);
+}
+
+.drop-zone.green { border-color: var(--green-zone); }
+.drop-zone.yellow { border-color: var(--yellow-zone); }
+.drop-zone.red { border-color: var(--red-zone); }
+
+.zone-badge {
+display: inline-block;
+padding: 10px 25px;
+border-radius: 50px;
+font-weight: 700;
+margin-bottom: 15px;
+font-size: 1rem;
+}
+
+.green .zone-badge { background: var(--green-zone); color: white; }
+.yellow .zone-badge { background: var(--yellow-zone); color: white; }
+.red .zone-badge { background: var(--red-zone); color: white; }
+
+.drop-zone-description {
+font-size: 0.9rem;
+color: #666;
+margin-bottom: 15px;
+}
+
+.dropped-cards-container {
+position: relative;
+width: 100%;
+min-height: 60px;
+margin-top: 15px;
+}
+
+.cards-container {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+margin: 40px 0;
+padding: 30px;
+background: rgba(255,255,255,0.8);
+border-radius: 20px;
+min-height: 200px;
+}
+
+.game-card {
+background: white;
+border-radius: 15px;
+padding: 20px;
+width: 260px;
+cursor: grab;
+transition: all 0.3s ease;
+box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+border: 2px solid transparent;
+position: relative;
+overflow: hidden;
+user-select: none;
+touch-action: none;
+}
+
+.game-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 5px;
+background: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+.game-card:hover {
+transform: translateY(-8px) rotate(2deg);
+box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.game-card.dragging {
+opacity: 0.6;
+transform: scale(0.95);
+cursor: grabbing;
+}
+
+.card-emoji {
+font-size: 2rem;
+margin-bottom: 10px;
+display: block;
+}
+
+.card-text {
+font-size: 0.95rem;
+line-height: 1.4;
+margin-bottom: 10px;
+}
+
+.card-hint {
+font-size: 0.75rem;
+color: #999;
+font-style: italic;
+}
+
+/* Dropped card - stack style */
+.dropped-card {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+background: white;
+padding: 12px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+animation: cardDropAnimation 0.5s ease;
+}
+
+@keyframes cardDropAnimation {
+0% {
+opacity: 0;
+transform: scale(0.8) translateY(-20px);
+}
+60% {
+transform: scale(1.05) translateY(0);
+}
+100% {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
+}
+
+.dropped-card:hover {
+transform: translateY(-5px);
+z-index: 10;
+}
+
+.dropped-card-content {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.dropped-card-emoji {
+font-size: 1.5rem;
+flex-shrink: 0;
+}
+
+.dropped-card-info {
+flex: 1;
+text-align: left;
+}
+
+.dropped-card-text {
+font-size: 0.8rem;
+margin-bottom: 5px;
+color: #333;
+}
+
+.dropped-card-feedback {
+font-size: 0.75rem;
+padding: 5px 8px;
+border-radius: 5px;
+display: inline-block;
+}
+
+.dropped-card-feedback.correct {
+background: rgba(46, 204, 113, 0.2);
+color: #27ae60;
+}
+
+.dropped-card-feedback.incorrect {
+background: rgba(231, 76, 60, 0.2);
+color: #c0392b;
+}
+
+.cards-counter {
+position: absolute;
+top: 10px;
+right: 10px;
+background: var(--primary);
+color: white;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+}
+
+.game-controls {
+text-align: center;
+margin-top: 30px;
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.game-controls button {
+padding: 15px 35px;
+font-size: 1rem;
+}
+
+/* ===== MODAL СТИЛОВЕ ===== */
+.modal {
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.7);
+animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+.modal-content {
+background: white;
+margin: 5% auto;
+padding: 0;
+border-radius: 25px;
+max-width: 600px;
+width: 90%;
+position: relative;
+animation: slideIn 0.4s ease;
+box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+overflow: hidden;
+}
+
+@keyframes slideIn {
+from {
+transform: translateY(-50px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.modal-header {
+padding: 30px;
+text-align: center;
+background: linear-gradient(135deg, var(--primary), var(--accent));
+color: white;
+}
+
+.modal-header h2 {
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.modal-body {
+padding: 40px;
+}
+
+.modal-close {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 2rem;
+color: white;
+cursor: pointer;
+background: none;
+border: none;
+transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+transform: scale(1.2) rotate(90deg);
+}
+
+.tutorial-step {
+margin-bottom: 25px;
+padding: 20px;
+background: #f8f9fa;
+border-radius: 15px;
+border-left: 5px solid var(--accent);
+}
+
+.tutorial-step h4 {
+color: var(--primary);
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tutorial-step i {
+font-size: 1.5rem;
+}
+
+.celebration-content {
+text-align: center;
+}
+
+.celebration-icon {
+font-size: 5rem;
+margin-bottom: 20px;
+animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-20px); }
+}
+
+.celebration-score {
+font-size: 3rem;
+font-weight: 700;
+color: var(--accent);
+margin: 20px 0;
+}
+
+.celebration-message {
+font-size: 1.3rem;
+margin-bottom: 30px;
+color: #666;
+}
+
+.celebration-stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin: 30px 0;
+}
+
+.celebration-stat {
+padding: 15px;
+background: #f8f9fa;
+border-radius: 10px;
+}
+
+.celebration-stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary);
+}
+
+.celebration-stat-label {
+font-size: 0.85rem;
+color: #666;
+margin-top: 5px;
+}
+
+/* ===== ФУТЪР ===== */
+.main-footer {
+background: linear-gradient(135deg, var(--dark), #343a40);
+color: white;
+padding: 60px 0 30px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-bottom: 40px;
+text-align: left;
+}
+
+.footer-section h4 {
+font-size: 1.4rem;
+margin-bottom: 20px;
+color: var(--accent);
+}
+
+.footer-section p {
+line-height: 1.8;
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 10px;
+}
+
+.footer-links a {
+color: #ccc;
+text-decoration: none;
+transition: all 0.3s ease;
+display: inline-block;
+}
+
+.footer-links a:hover {
+color: white;
+padding-left: 5px;
+}
+
+.footer-contact {
+margin-top: 15px;
+}
+
+.footer-contact a {
+color: var(--accent);
+text-decoration: none;
+font-weight: 600;
+transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+color: var(--light-accent);
+}
+
+.copyright {
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+color: #aaa;
+font-size: 0.9rem;
+text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+.nav-links {
+position: fixed;
+left: -100%;
+top: 70px;
+flex-direction: column;
+background-color: rgba(255, 255, 255, 0.98);
+width: 100%;
+text-align: center;
+transition: 0.4s;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+padding: 30px 0;
+gap: 0;
+}
+
+.nav-links.active {
+left: 0;
+}
+
+.nav-links li {
+margin: 15px 0;
+}
+
+.hamburger {
+display: flex;
+}
+
+.hero h1 {
+font-size: 2.5rem;
+}
+
+.section-title {
+font-size: 2.2rem;
+}
+
+.zones-grid {
+grid-template-columns: 1fr;
+}
+
+/* TABLET: Horizontal zones layout */
+.game-board {
+display: flex;
+flex-direction: row;
+gap: 15px;
+overflow-x: auto;
+padding-bottom: 10px;
+}
+
+.drop-zone {
+min-width: 200px;
+flex: 1;
+}
+
+.game-container {
+padding: 25px;
+}
+
+.game-stats {
+flex-direction: column;
+align-items: stretch;
+}
+
+.celebration-stats {
+grid-template-columns: 1fr;
+}
+
+.game-card {
+width: 100%;
+max-width: 300px;
+}
+
+.footer-content {
+text-align: center;
+}
+}
+
+@media (max-width: 768px) {
+.game-warning {
+flex-direction: column;
+text-align: center;
+}
+
+/* MOBILE: Sticky zones at top */
+.game-board {
+position: sticky;
+top: 80px;
+z-index: 100;
+background: white;
+padding: 15px;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+margin-bottom: 20px;
+display: flex;
+flex-direction: row;
+gap: 10px;
+overflow-x: auto;
+}
+
+.drop-zone {
+min-height: 120px;
+min-width: 150px;
+padding: 15px;
+flex-shrink: 0;
+}
+
+.zone-badge {
+font-size: 0.8rem;
+padding: 6px 12px;
+}
+
+.drop-zone-description {
+font-size: 0.75rem;
+}
+
+.cards-container {
+padding: 20px 15px;
+gap: 15px;
+}
+
+.game-card {
+width: 100%;
+max-width: 280px;
+margin: 0 auto;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Хедър -->
+<header class="main-header">
+<div class="container header-container">
+<a href="index.html" class="logo">
+Kids<span>AI</span>.bg
+</a>
+
+<nav>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html" class="active"><i class="fas fa-home"></i> Начало</a></li>
+<li><a href="#about"><i class="fas fa-users"></i> За Нас</a></li>
+<li><a href="#zones"><i class="fas fa-traffic-light"></i> Тризоните</a></li>
+<li><a href="#game"><i class="fas fa-gamepad"></i> Игра</a></li>
+<li><a href="articles.html"><i class="fas fa-newspaper"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-book"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-flask"></i> AI Лаборатория</a></li>
+<li><a href="#contact"><i class="fas fa-envelope"></i> Контакт</a></li>
+</ul>
+</nav>
+
+<button class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+
+<!-- Hero Секция -->
+<section class="hero" id="home">
+<div class="container hero-content">
+<h1>🎯 Здравословно дигитално детство в ерата на AI</h1>
+<p>Екип "Гнездото" ви дава практическата формула за баланс между технологии и човешки връзки</p>
+<a href="#zones" class="cta-button">
+<i class="fas fa-magic"></i> Открий Тризоните на AI
+</a>
+</div>
+</section>
+
+<!-- Тим Секция -->
+<section class="team-section" id="about">
+<div class="container">
+<h2 class="section-title">Екип "Гнездото"</h2>
+<p class="section-subtitle">Професионалисти, обединени от мисията да направят AI безопасен за децата</p>
+<div class="section-description">
+Зад Екип ГНЕЗДОТО стоят три личности - художник-арт терапевт и двама психолози - приказо и музико терапевт. В работата си те обединяват словото, музиката и изобразителното изкуство в мощна лечебна сила в помощ на хората. Съдбата им е дала уникалната възможност да черпят вдъхновение от пълноводния извор на човешката природа, от нейните най-дълбоки и автентични корени. Част от техния път е и сайта KidsAI.bg
+</div>
+
+<div class="team-grid">
+<div class="team-card">
+<div class="team-icon">
+<i class="fas fa-book-reader"></i>
+</div>
+<h3>Психолог-Приказотерапевт</h3>
+<p>Превръща сложните концепции в разбираеми истории и метафори за децата</p>
+</div>
+
+<div class="team-card">
+<div class="team-icon">
+<i class="fas fa-music"></i>
+</div>
+<h3>Психолог-Музикотерапевт</h3>
+<p>Използва силата на музиката за развитие на емоционална интелигентност</p>
+</div>
+
+<div class="team-card">
+<div class="team-icon">
+<i class="fas fa-palette"></i>
+</div>
+<h3>Художник-Арттерапевт</h3>
+<p>Помага на децата да изразят емоциите си чрез изкуство и творчество</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Тризоните Секция -->
+<section class="zones-section" id="zones">
+<div class="container">
+<h2 class="section-title">🚦 Тризоните на AI</h2>
+<p class="section-subtitle">Научете детето си да разпознава в коя зона попада всяка ситуация с AI</p>
+
+<div class="zones-grid">
+<!-- Зелена Зона -->
+<div class="zone-card green">
+<div class="zone-icon">
+<i class="fas fa-check-circle"></i>
+</div>
+<h3>🟢 ЗЕЛЕНА ЗОНА</h3>
+<p><strong>"Това може да получи от AI"</strong></p>
+<ul class="zone-features">
+<li>Факти и обяснения</li>
+<li>Идеи за проекти</li>
+<li>Творчески стартове</li>
+<li>Шаблони и примери</li>
+<li>Бърза помощ при нужда</li>
+</ul>
+</div>
+
+<!-- Жълта Зона -->
+<div class="zone-card yellow">
+<div class="zone-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<h3>🟡 ЖЪЛТА ЗОНА</h3>
+<p><strong>"Това е работа за хората"</strong></p>
+<ul class="zone-features">
+<li>Истинска емпатия и разбиране</li>
+<li>Безусловна родителска любов</li>
+<li>Мъдрост от жизнен опит</li>
+<li>Морални решения и ценности</li>
+<li>Физически притегляния и прегръдки</li>
+</ul>
+</div>
+
+<!-- Червена Зона -->
+<div class="zone-card red">
+<div class="zone-icon">
+<i class="fas fa-times-circle"></i>
+</div>
+<h3>🔴 ЧЕРВЕНА ЗОНА</h3>
+<p><strong>"Внимание - тук AI може да навреди"</strong></p>
+<ul class="zone-features">
+<li>Емоционална привързаност към AI</li>
+<li>Замяна на реални приятелства</li>
+<li>Загуба на собствена креативност</li>
+<li>Сравнение и погрешно себевъзприятие</li>
+<li>Прекалена зависимост от технологии</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Игра Секция -->
+<section class="game-section" id="game">
+<div class="container">
+<h2 class="section-title">🎮 Игра: "Пътешествието в Тризоните"</h2>
+<p class="section-subtitle">Влачи картите в правилната зона. Най-важното е разговорът след играта!</p>
+
+<div class="game-container">
+<!-- Warning -->
+<div class="game-warning">
+<i class="fas fa-info-circle"></i>
+<div class="game-warning-text">
+<strong>⚠️ Важно за родители</strong>
+Някои въпроси засягат сериозни теми като здраве, безопасност и етични дилеми. Препоръчваме да играете заедно с детето си и да водите отворен разговор за всяка ситуация.
+</div>
+</div>
+
+<!-- Stats -->
+<div class="game-stats">
+<div class="stat-item">
+<i class="fas fa-trophy"></i>
+<span>Точки: <span id="currentScore">0</span></span>
+</div>
+<div class="stat-item">
+<i class="fas fa-star"></i>
+<span>Рекорд: <span id="highScore">0</span></span>
+</div>
+<div class="stat-item">
+<i class="fas fa-layer-group"></i>
+<span>Остават: <span id="cardsLeft">5</span></span>
+</div>
+</div>
+
+<!-- Game Board -->
+<div class="game-board" id="gameBoard">
+<!-- Зелена зона -->
+<div class="drop-zone green" data-zone="green">
+<div class="zone-badge">ЗЕЛЕНА ЗОНА</div>
+<p class="drop-zone-description"><i class="fas fa-robot"></i> AI може да помогне тук</p>
+<div class="dropped-cards-container" id="droppedGreen">
+<span class="cards-counter" id="counterGreen" style="display:none;">0</span>
+</div>
+</div>
+
+<!-- Жълта зона -->
+<div class="drop-zone yellow" data-zone="yellow">
+<div class="zone-badge">ЖЪЛТА ЗОНА</div>
+<p class="drop-zone-description"><i class="fas fa-users"></i> Това е работа за хората</p>
+<div class="dropped-cards-container" id="droppedYellow">
+<span class="cards-counter" id="counterYellow" style="display:none;">0</span>
+</div>
+</div>
+
+<!-- Червена зона -->
+<div class="drop-zone red" data-zone="red">
+<div class="zone-badge">ЧЕРВЕНА ЗОНА</div>
+<p class="drop-zone-description"><i class="fas fa-exclamation-triangle"></i> Внимание, опасност!</p>
+<div class="dropped-cards-container" id="droppedRed">
+<span class="cards-counter" id="counterRed" style="display:none;">0</span>
+</div>
+</div>
+</div>
+
+<!-- Карти за играта -->
+<div class="cards-container" id="cardsContainer">
+<!-- Картите ще се генерират от JavaScript -->
+</div>
+
+<!-- Контроли -->
+<div class="game-controls">
+<button class="cta-button" id="newGameBtn">
+<i class="fas fa-redo"></i> Нова игра
+</button>
+<button class="cta-button" id="tutorialBtn" style="background: linear-gradient(45deg, #9b59b6, #8e44ad);">
+<i class="fas fa-question-circle"></i> Как се играе?
+</button>
+</div>
+
+<!-- Текст за изпращане на въпроси -->
+<div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(52, 152, 219, 0.05); border-radius: 15px; border-left: 4px solid var(--accent);">
+<p style="font-size: 1.1rem; color: #555; margin-bottom: 15px;">
+<i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 8px;"></i>
+<strong>Имате идеи за нови въпроси?</strong>
+</p>
+<p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">
+Изпратете ни Вашите въпроси за играта. Ще ги включим при следващо обновяване. 
+Така ще помогнете други родители и деца да учат заедно!
+</p>
+<a href="mailto:contact@kidsai.bg?subject=Въпрос за играта" class="cta-button" style="background: linear-gradient(45deg, #27ae60, #2ecc71);">
+<i class="fas fa-envelope"></i> Изпратете идея
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Футър -->
+<footer class="main-footer" id="contact">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4><i class="fas fa-map-marker-alt"></i> KidsAI.bg</h4>
+<p>Образователна платформа за AI грамотност при деца</p>
+<div class="footer-contact">
+<p><i class="fas fa-envelope"></i> <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a></p>
+</div>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-link"></i> Бързи линкове</h4>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Начало</a></li>
+<li><a href="#about"><i class="fas fa-chevron-right"></i> За Нас</a></li>
+<li><a href="#zones"><i class="fas fa-chevron-right"></i> Тризоните</a></li>
+<li><a href="#game"><i class="fas fa-chevron-right"></i> Игра</a></li>
+<li><a href="articles.html"><i class="fas fa-chevron-right"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-chevron-right"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-chevron-right"></i> AI Лаборатория</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-shield-alt"></i> Нашата Мисия</h4>
+<p>Да създадим сигурна и информативна среда, която помага на родителите да навигират в дигиталния свят заедно със своите деца.</p>
+</div>
+</div>
+
+<div class="copyright">
+<p>&copy; 2024 KidsAI.bg | Екип "Гнездото". Всички права запазени.</p>
+<p style="margin-top: 10px; font-size: 0.8rem;">
+<i class="fas fa-heart" style="color: #f72585;"></i> Създадено с любов и грижа за бъдещето
+</p>
+</div>
+</div>
+</footer>
+
+<!-- Tutorial Modal -->
+<div id="tutorialModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h2><i class="fas fa-graduation-cap"></i> Как се играе?</h2>
+<button class="modal-close" id="closeTutorial">&times;</button>
+</div>
+<div class="modal-body">
+<div class="tutorial-step">
+<h4><i class="fas fa-hand-pointer"></i> 1. Вземи карта</h4>
+<p>Хвани картата с мишката (или пръста си на телефон) и я влачи.</p>
+</div>
+<div class="tutorial-step">
+<h4><i class="fas fa-arrows-alt"></i> 2. Пусни в зоната</h4>
+<p>Помисли къде трябва да отиде картата - в Зелената, Жълтата или Червената зона?</p>
+</div>
+<div class="tutorial-step">
+<h4><i class="fas fa-comments"></i> 3. Говорете заедно</h4>
+<p><strong>Най-важното:</strong> След всяка карта поговорете защо тази ситуация попада в тази зона. Няма грешни отговори - има учебни моменти!</p>
+</div>
+<div class="tutorial-step">
+<h4><i class="fas fa-trophy"></i> 4. Събирай точки</h4>
+<p>За всяка правилна карта получаваш 20 точки. Опитай се да подобриш рекорда си!</p>
+</div>
+<button class="cta-button" id="startGameBtn" style="width: 100%; margin-top: 20px;">
+<i class="fas fa-play"></i> Започни играта!
+</button>
+</div>
+</div>
+</div>
+
+<!-- Celebration Modal -->
+<div id="celebrationModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h2><i class="fas fa-trophy"></i> Браво!</h2>
+<button class="modal-close" id="closeCelebration">&times;</button>
+</div>
+<div class="modal-body">
+<div class="celebration-content">
+<div class="celebration-icon">🎉</div>
+<div class="celebration-score" id="finalScore">0</div>
+<div class="celebration-message" id="celebrationMessage">Свършихте играта!</div>
+<div class="celebration-stats">
+<div class="celebration-stat">
+<div class="celebration-stat-value" id="correctAnswers">0</div>
+<div class="celebration-stat-label">Правилни</div>
+</div>
+<div class="celebration-stat">
+<div class="celebration-stat-value" id="totalCards">0</div>
+<div class="celebration-stat-label">Общо</div>
+</div>
+<div class="celebration-stat">
+<div class="celebration-stat-value" id="accuracyPercent">0%</div>
+<div class="celebration-stat-label">Точност</div>
+</div>
+</div>
+<button class="cta-button" id="playAgainBtn" style="width: 100%; margin-top: 20px;">
+<i class="fas fa-redo"></i> Играй отново!
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<script src="game-data.js"></script>
+<script src="game.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>
