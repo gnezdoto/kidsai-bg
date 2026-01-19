@@ -274,7 +274,7 @@ function processCardDrop(cardElement, dropZone, droppedZone, correctZone, cardDa
         <div class="dropped-card-text">${cardData.text}</div>
         <div class="dropped-card-feedback ${isCorrect ? 'correct' : 'incorrect'}">
           <i class="fas fa-${isCorrect ? 'check-circle' : 'times-circle'}"></i>
-          ${isCorrect ? 'Правилно!' : 'Опа!'}
+          ${isCorrect ? 'Правилно!' : 'Грешно!'}
         </div>
       </div>
     </div>
