@@ -1,195 +1,484 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статии | KidsAI.bg - Екип Гнездото</title>
-    <meta name="description" content="Статии и ръководства за родители за безопасно използване на AI от деца. Практически съвети от Екип Гнездото.">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.kidsai.bg/articles.html">
-    <meta property="og:title" content="Статии | KidsAI.bg - Екип Гнездото">
-    <meta property="og:description" content="Статии и ръководства за родители за безопасно използване на AI от деца.">
-    <meta property="og:image" content="https://www.kidsai.bg/images/hero-bg.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    
-    <!-- Шрифтове и иконки -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Основни стилове -->
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Статии - KidsAI.bg</title>
+<meta name="description" content="Експертни статии за AI и детско развитие. Практически съвети за родители.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--primary: #2c3e50;
+--secondary: #34495e;
+--accent: #3498db;
+--light-accent: #5dade2;
+--light: #f8f9fa;
+--dark: #212529;
+--background-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+background: var(--background-gradient);
+color: var(--dark);
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: 700;
+background: linear-gradient(45deg, var(--primary), var(--accent));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo i {
+font-size: 2.2rem;
+color: var(--primary);
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+list-style: none;
+align-items: center;
+}
+
+.nav-links a {
+color: var(--dark);
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+padding: 8px 16px;
+border-radius: 25px;
+transition: all 0.3s ease;
+white-space: nowrap;
+}
+
+.nav-links a:hover {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+transform: translateY(-2px);
+}
+
+.nav-links a.active {
+background: linear-gradient(45deg, var(--primary), var(--accent));
+color: white;
+}
+
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+padding: 5px;
+background: none;
+border: none;
+}
+
+.hamburger span {
+width: 28px;
+height: 3px;
+background: var(--primary);
+margin: 4px 0;
+transition: 0.3s;
+border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Hero */
+.page-hero {
+padding: 150px 0 80px;
+text-align: center;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+}
+
+.page-hero h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.page-hero p {
+font-size: 1.2rem;
+opacity: 0.9;
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+padding: 100px 0;
+text-align: center;
+background: white;
+}
+
+.coming-soon-icon {
+font-size: 5rem;
+color: var(--accent);
+margin-bottom: 2rem;
+animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.1); }
+}
+
+.coming-soon-title {
+font-size: 2.5rem;
+color: var(--primary);
+margin-bottom: 1.5rem;
+}
+
+.coming-soon-text {
+font-size: 1.2rem;
+color: #666;
+max-width: 700px;
+margin: 0 auto 2rem auto;
+line-height: 1.8;
+}
+
+.topics-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+margin: 3rem 0;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.topic-card {
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+padding: 30px;
+border-radius: 15px;
+border-left: 5px solid var(--accent);
+text-align: left;
+transition: transform 0.3s ease;
+}
+
+.topic-card:hover {
+transform: translateY(-5px);
+}
+
+.topic-card h3 {
+color: var(--primary);
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.topic-card i {
+font-size: 1.5rem;
+color: var(--accent);
+}
+
+.cta-button {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: linear-gradient(45deg, var(--accent), var(--light-accent));
+color: white;
+padding: 15px 35px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 700;
+font-size: 1rem;
+transition: all 0.3s ease;
+border: none;
+cursor: pointer;
+box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+margin-top: 2rem;
+}
+
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 15px 40px rgba(52, 152, 219, 0.6);
+}
+
+/* Footer */
+.main-footer {
+background: linear-gradient(135deg, var(--dark), #343a40);
+color: white;
+padding: 60px 0 30px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-bottom: 40px;
+text-align: left;
+}
+
+.footer-section h4 {
+font-size: 1.4rem;
+margin-bottom: 20px;
+color: var(--accent);
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 10px;
+}
+
+.footer-links a {
+color: #ccc;
+text-decoration: none;
+transition: all 0.3s ease;
+display: inline-block;
+}
+
+.footer-links a:hover {
+color: white;
+padding-left: 5px;
+}
+
+.footer-contact a {
+color: var(--accent);
+text-decoration: none;
+font-weight: 600;
+}
+
+.footer-contact a:hover {
+color: var(--light-accent);
+}
+
+.copyright {
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+color: #aaa;
+font-size: 0.9rem;
+text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+.nav-links {
+position: fixed;
+left: -100%;
+top: 70px;
+flex-direction: column;
+background-color: rgba(255, 255, 255, 0.98);
+width: 100%;
+text-align: center;
+transition: 0.4s;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+padding: 30px 0;
+gap: 0;
+}
+
+.nav-links.active {
+left: 0;
+}
+
+.nav-links li {
+margin: 15px 0;
+}
+
+.hamburger {
+display: flex;
+}
+
+.page-hero h1 {
+font-size: 2.5rem;
+}
+
+.footer-content {
+text-align: center;
+}
+}
+</style>
 </head>
 <body>
 
-<!-- Хедър -->
+<!-- Header -->
 <header class="main-header">
-    <div class="container header-container">
-        <a href="index.html" class="logo">
-            Kids<span>AI</span>.bg
-        </a>
-        
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html"><i class="fas fa-home"></i> Начало</a></li>
-                <li><a href="index.html#about"><i class="fas fa-users"></i> За Нас</a></li>
-                <li><a href="index.html#zones"><i class="fas fa-traffic-light"></i> Тризоните</a></li>
-                <li><a href="index.html#game"><i class="fas fa-gamepad"></i> Игра</a></li>
-                <li><a href="articles.html" class="active"><i class="fas fa-newspaper"></i> Статии</a></li>
-                <li><a href="resources.html"><i class="fas fa-book"></i> Ресурси</a></li>
-                <li><a href="ai-lab.html"><i class="fas fa-flask"></i> AI Лаборатория</a></li>
-                <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Контакт</a></li>
-            </ul>
-        </nav>
-        
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
+<div class="container header-container">
+<a href="index.html" class="logo">
+Kids<span>AI</span>.bg
+</a>
+
+<nav>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Начало</a></li>
+<li><a href="index.html#about"><i class="fas fa-users"></i> За Нас</a></li>
+<li><a href="index.html#zones"><i class="fas fa-traffic-light"></i> Тризоните</a></li>
+<li><a href="index.html#game"><i class="fas fa-gamepad"></i> Игра</a></li>
+<li><a href="articles.html" class="active"><i class="fas fa-newspaper"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-book"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-flask"></i> AI Лаборатория</a></li>
+<li><a href="index.html#contact"><i class="fas fa-envelope"></i> Контакт</a></li>
+</ul>
+</nav>
+
+<button class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
 </header>
 
-<!-- Page Hero -->
+<!-- Hero -->
 <section class="page-hero">
-    <div class="container">
-        <h1><i class="fas fa-newspaper"></i> Статии</h1>
-        <p>Полезни материали за родители и деца в ерата на AI</p>
-    </div>
+<div class="container">
+<h1>📰 Статии за родители</h1>
+<p>Експертни съвети и анализи за AI и детско развитие</p>
+</div>
 </section>
 
-<!-- Articles Section -->
-<section class="content-section">
-    <div class="container">
-        
-        <div class="articles-grid">
-            
-            <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-            <!-- ║  ИНСТРУКЦИИ ЗА ДОБАВЯНЕ НА НОВА СТАТИЯ:                       ║ -->
-            <!-- ║  1. Копирайте целия блок между START и END                    ║ -->
-            <!-- ║  2. Поставете го под последната статия                        ║ -->
-            <!-- ║  3. Променете: заглавие, категория, текст, дата, линк         ║ -->
-            <!-- ║  4. За снимка: качете в папка images/ и сменете src           ║ -->
-            <!-- ╚══════════════════════════════════════════════════════════════╝ -->
-            
-            <!-- ===== START СТАТИЯ ===== -->
-            <article class="article-card">
-                <!-- СНИМКА: Сменете src с вашата снимка от папка images/ -->
-                <img src="images/hero-bg.png" alt="Как да говорим с децата за AI" class="article-image">
-                <div class="article-content">
-                    <!-- КАТЕГОРИЯ: Сменете текста (примери: Ръководство, Съвети, Анализ, Психология) -->
-                    <span class="article-category">Ръководство</span>
-                    <!-- ЗАГЛАВИЕ: Сменете заглавието на статията -->
-                    <h3 class="article-title">Как да говорим с децата за AI?</h3>
-                    <!-- ОПИСАНИЕ: Кратко описание на статията (2-3 изречения) -->
-                    <p class="article-excerpt">
-                        Практически съвети за родители как да обяснят изкуствения интелект на децата си по разбираем и безопасен начин.
-                    </p>
-                    <div class="article-meta">
-                        <!-- ДАТА: Сменете датата -->
-                        <span><i class="fas fa-calendar"></i> 15 Януари 2024</span>
-                        <!-- ЛИНК: Сменете href с линк към пълната статия -->
-                        <a href="article-ai-talk.html" class="read-more">Прочети <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            <!-- ===== END СТАТИЯ ===== -->
-            
-            <!-- ===== START СТАТИЯ ===== -->
-            <article class="article-card">
-                <img src="images/zones-bg.png" alt="5 правила за безопасно използване на ChatGPT" class="article-image">
-                <div class="article-content">
-                    <span class="article-category">Съвети</span>
-                    <h3 class="article-title">5 правила за безопасно използване на ChatGPT</h3>
-                    <p class="article-excerpt">
-                        Основни правила, които всяко дете трябва да знае преди да започне да използва AI чатботове.
-                    </p>
-                    <div class="article-meta">
-                        <span><i class="fas fa-calendar"></i> 10 Януари 2024</span>
-                        <a href="article-template.html" class="read-more">Прочети <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            <!-- ===== END СТАТИЯ ===== -->
-            
-            <!-- ===== START СТАТИЯ ===== -->
-            <article class="article-card">
-                <img src="images/game-bg.png" alt="Тризоните на AI - защо работят" class="article-image">
-                <div class="article-content">
-                    <span class="article-category">Анализ</span>
-                    <h3 class="article-title">Тризоните на AI - защо работят?</h3>
-                    <p class="article-excerpt">
-                        Научната основа зад концепцията за Тризоните и защо този подход е ефективен за обучение на деца.
-                    </p>
-                    <div class="article-meta">
-                        <span><i class="fas fa-calendar"></i> 5 Януари 2024</span>
-                        <a href="article-template.html" class="read-more">Прочети <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            <!-- ===== END СТАТИЯ ===== -->
-            
-            <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-            <!-- ║  ДОБАВЯЙТЕ НОВИ СТАТИИ ТУК (копирайте блока между START/END) ║ -->
-            <!-- ╚══════════════════════════════════════════════════════════════╝ -->
-            
-        </div>
-        
-        <!-- Секция за споделяне -->
-        <div style="text-align: center; margin-top: 60px; padding: 40px; background: rgba(52, 152, 219, 0.05); border-radius: 20px; border-left: 5px solid var(--accent);">
-            <h3 style="color: var(--primary); margin-bottom: 15px;"><i class="fas fa-share-alt"></i> Имате полезна статия?</h3>
-            <p style="color: #666; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Ако сте написали или намерили интересна статия, която би била полезна за други родители, споделете я с нас!
-            </p>
-            <a href="mailto:contact@kidsai.bg?subject=Предложение за статия" class="cta-button" style="opacity: 1; animation: none;">
-                <i class="fas fa-envelope"></i> Изпратете статия
-            </a>
-        </div>
-        
-    </div>
+<!-- Coming Soon -->
+<section class="coming-soon-section">
+<div class="container">
+<div class="coming-soon-icon">
+<i class="fas fa-pencil-alt"></i>
+</div>
+<h2 class="coming-soon-title">Скоро идват първите статии!</h2>
+<p class="coming-soon-text">
+Работим усилено върху съдържание, което ще ви помогне да навигирате в света на AI заедно с децата си. 
+Всяка статия е писана от професионалисти и базирана на реален опит.
+</p>
+
+<div class="topics-list">
+<div class="topic-card">
+<h3><i class="fas fa-child"></i> AI и развитие</h3>
+<p>Как AI влияе на детското развитие и какво трябва да знаят родителите</p>
+</div>
+
+<div class="topic-card">
+<h3><i class="fas fa-shield-alt"></i> Безопасност</h3>
+<p>Практически съвети за безопасно използване на AI технологии</p>
+</div>
+
+<div class="topic-card">
+<h3><i class="fas fa-brain"></i> Психология</h3>
+<p>Психологически анализи и съвети от експерти терапевти</p>
+</div>
+
+<div class="topic-card">
+<h3><i class="fas fa-graduation-cap"></i> Образование</h3>
+<p>AI в училище - как да подкрепим децата си в ученето</p>
+</div>
+
+<div class="topic-card">
+<h3><i class="fas fa-comments"></i> Разговори</h3>
+<p>Как да говорим с децата за AI според тяхната възраст</p>
+</div>
+
+<div class="topic-card">
+<h3><i class="fas fa-lightbulb"></i> Практики</h3>
+<p>Конкретни упражнения и дейности за семейството</p>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 3rem; padding: 30px; background: rgba(52, 152, 219, 0.05); border-radius: 15px;">
+<p style="font-size: 1.1rem; color: #555; margin-bottom: 15px;">
+<i class="fas fa-share-alt" style="color: var(--accent);"></i>
+<strong> Имате полезна статия за споделяне?</strong>
+</p>
+<p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">
+Ако има интересни статии, които са ви били полезни и искате да ги споделите с други родители, изпратете ги на нашия email.
+</p>
+</div>
+
+<a href="mailto:contact@kidsai.bg?subject=Споделяне на статия" class="cta-button">
+<i class="fas fa-envelope"></i> Свържете се с нас
+</a>
+</div>
 </section>
 
-<!-- Футър -->
-<footer class="main-footer" id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4><i class="fas fa-map-marker-alt"></i> KidsAI.bg</h4>
-                <p>Образователна платформа за AI грамотност при деца</p>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a></p>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h4><i class="fas fa-link"></i> Бързи линкове</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Начало</a></li>
-                    <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> За Нас</a></li>
-                    <li><a href="index.html#zones"><i class="fas fa-chevron-right"></i> Тризоните</a></li>
-                    <li><a href="index.html#game"><i class="fas fa-chevron-right"></i> Игра</a></li>
-                    <li><a href="articles.html"><i class="fas fa-chevron-right"></i> Статии</a></li>
-                    <li><a href="resources.html"><i class="fas fa-chevron-right"></i> Ресурси</a></li>
-                    <li><a href="ai-lab.html"><i class="fas fa-chevron-right"></i> AI Лаборатория</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4><i class="fas fa-shield-alt"></i> Нашата Мисия</h4>
-                <p>Да създадем сигурна и информативна среда, която помага на родителите да навигират в дигиталния свят заедно със своите деца.</p>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2024 KidsAI.bg | Екип "Гнездото". Всички права запазени.</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">
-                <i class="fas fa-heart" style="color: #f72585;"></i> Създадено с любов и грижа за бъдещето
-            </p>
-        </div>
-    </div>
+<!-- Footer -->
+<footer class="main-footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4><i class="fas fa-map-marker-alt"></i> KidsAI.bg</h4>
+<p>Образователна платформа за AI грамотност при деца</p>
+<div class="footer-contact">
+<p><i class="fas fa-envelope"></i> <a href="mailto:contact@kidsai.bg">contact@kidsai.bg</a></p>
+</div>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-link"></i> Бързи линкове</h4>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Начало</a></li>
+<li><a href="index.html#about"><i class="fas fa-chevron-right"></i> За Нас</a></li>
+<li><a href="index.html#zones"><i class="fas fa-chevron-right"></i> Тризоните</a></li>
+<li><a href="index.html#game"><i class="fas fa-chevron-right"></i> Игра</a></li>
+<li><a href="articles.html"><i class="fas fa-chevron-right"></i> Статии</a></li>
+<li><a href="resources.html"><i class="fas fa-chevron-right"></i> Ресурси</a></li>
+<li><a href="ai-lab.html"><i class="fas fa-chevron-right"></i> AI Лаборатория</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4><i class="fas fa-shield-alt"></i> Нашата Мисия</h4>
+<p>Да създадим сигурна и информативна среда, която помага на родителите да навигират в дигиталния свят заедно със своите деца.</p>
+</div>
+</div>
+
+<div class="copyright">
+<p>&copy; 2024 KidsAI.bg | Екип "Гнездото". Всички права запазени.</p>
+<p style="margin-top: 10px; font-size: 0.8rem;">
+<i class="fas fa-heart" style="color: #f72585;"></i> Създадено с любов и грижа за бъдещето
+</p>
+</div>
+</div>
 </footer>
 
 <script src="navigation.js"></script>
